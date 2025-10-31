@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>
-            Tienda Agus
-        </title>
+        <meta charset="UTF-8">
+        <title>Tienda Agus</title>
+        <link href="src/css/main.css" rel="stylesheet"/>
     </head>
     <body>
         <header>
-            <div>
+            <div class="titulo">
                 <h2>Tienda Agus</h2>
             </div>
-            <nav class="barra-navegacion">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="registro.html">Registro</a></li>
-                    <li><a href="ingresar.html">Ingresar</a></li>
-                </ul>
-            </nav>
+            <div class="barra-navegacion-container">
+                <nav class="barra-navegacion">
+                    <ul class="barra-navegacion-lista">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="src/html/registro.html">Registro</a></li>
+                        <li><a href="src/html/ingresar.html">Ingresar</a></li>
+                        <li><a href="src/html/productos.html">Productos</a></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <main>
-
+            <h2>Espacio para añadir descripciones, imagenes y demás.</h2>
         </main>
         <footer>
-
+            <div class="columna-footer">
+                <h3>Sitio creado por:</h3>
+                <a>Agustin Cavassa</a>
+            </div>
+            <div class="columna-footer">
+                <h3>Repositorio:</h3>
+                <a id="github-link" href="https://github.com/aguscavassa/TiendaAgus"><img src="./src/img/github-mark.svg">Tienda Agus</a>
+            </div>
+            <div class="columna-footer">
+                <h3>Trabajo para la materia:</h3>
+                <a>Aplicaciones Web 1</a>
+            </div>
         </footer>
     </body>
 </html>
