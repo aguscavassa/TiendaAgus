@@ -1,0 +1,36 @@
+{
+    "anillos": [
+        {
+            "nombre": "Anillo de oro Infinito",
+            "descripcion": "Anillo de oro 18k de color rojo con piedras.",
+            "imagen": "../img/Anillo1.jpg",
+            "precio": 19884.98
+        },
+        {
+            "nombre": "Anillo de oro Juegos Olimpicos",
+            "descripcion": "Anillo de oro 18k de color rojo.",
+            "imagen": "../img/Anillo2.png",
+            "precio": 15990.99
+        },
+        {
+            "nombre": "Anillo de oro Diamantes",
+            "descripcion": "Anillo de oro 18k de color amarillo con medida 11.",
+            "imagen": "../img/Anillo3.jpeg",
+            "precio": 20500.90
+        }
+    ],
+    "cadenas": [
+        {
+            "nombre": "Cadena de oro Luz",
+            "descripcion": "Cadena de oro 18k de color amarillo.",
+            "imagen": "../img/Cadena1.jpg",
+            "precio": 19884.98
+        },
+        {
+            "nombre": "Cadena de plata Simple",
+            "descripcion": "Cadena de plata 925.",
+            "imagen": "../img/Cadena2.jpg",
+            "precio": 15990.99
+        }
+    ]
+}

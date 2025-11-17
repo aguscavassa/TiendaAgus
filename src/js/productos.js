@@ -13,6 +13,14 @@ document.addEventListener('DOMContentLoaded', ()=> {
         alert('Se ha cerrado la sesión.');
         window.location.href = './ingresar.html';
     });
-    document.querySelector('main').insertAdjacentHTML('beforeend', cardComponente('Anillo1', 'Esta descripcion', '$1000'));
+
+    fetch('../json/productos.json').then((res) => res.json()).then((data) => {
+        data.anillos.forEach(e => {
+            document.getElementById('anillos-container').insertAdjacentHTML('beforeend', cardComponente(e.nombre, e.descripcion, e.imagen, e.precio));
+        });
+        data.cadenas.forEach(e => {
+            document.getElementById('cadenas-container').insertAdjacentHTML('beforeend', cardComponente(e.nombre, e.descripcion, e.imagen, e.precio));
+        });
+    });
 });
 
