@@ -51,17 +51,50 @@ export let footer = `
 
 // Componente: cards de los productos.
 
-export let cardComponente = (titulo, descripcion, imagen, precio) => {
+export let cardComponente = (nombre, descripcion, imagen, precio) => {
     return `
         <div class="card">
             <img src="${imagen}">
-            <h3>${titulo}</h3>
+            <h3>${nombre}</h3>
             <p>${descripcion}</p>
             <p>$${precio}</p>
             <div class="cantidad-container">
-                <input id="${titulo}-cantidad" type="number" min="1" value="1">
-                <button id="comprar-${titulo}-btn">Añadir al carrito</button>
+                <input id="${nombre}-cantidad" type="number" min="1" value="1">
+                <button id="comprar-${nombre}-btn">Añadir al carrito</button>
             </div>
         </div>
     `;
+}
+
+export let cardComponenteCarrito = (nombre, descripcion, imagen, precio, cantidad) => {
+    return `
+        <div class="card">
+            <img src="${imagen}">
+            <h3>${nombre}</h3>
+            <p>${descripcion}</p>
+            <p>$${precio}</p>
+            <div class="cantidad-container">
+                <input id="${nombre}-cantidad" type="number" min="1" value="${cantidad}">
+                <button id="${nombre}-eliminar">Eliminar</button>
+            </div>
+        </div>
+    `;
+}
+
+export function loader() {
+    document.querySelector('body').insertAdjacentHTML('afterbegin', header);
+    document.querySelector('body').insertAdjacentHTML('beforeend', footer);
+    document.getElementById('ingresar-btn').addEventListener('click', () => {
+        window.location.href = './ingresar.html';
+    });
+    document.getElementById('registro-btn').addEventListener('click', () => {
+        window.location.href = './registro.html';
+    });
+    document.getElementById('logout-btn').addEventListener('click', () => {
+        alert('Se ha cerrado la sesión.');
+        window.location.href = './ingresar.html';
+    });
+    document.getElementById('carrito-btn').addEventListener('click', () => {
+        window.location.href = './carrito.html';
+    });
 }
