@@ -1,8 +1,7 @@
 let navegacionArray = [
-    {titulo: 'Inicio', link: 'index.html'},
-    {titulo: 'Productos', link: 'productos.html'}
+    {titulo: 'Inicio', link: `${window.location.origin}/index.html`},
+    {titulo: 'Productos', link: `${window.location.origin}/src/html/productos.html`}
 ];
-
 
 // Componente: barra de navegacion y el encabezado.
 export let header = `
