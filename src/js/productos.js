@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 cantTemp = localStorage.getItem(e.nombre);
             } else cantTemp = e.cantidad;
             document.getElementById('anillos-container').insertAdjacentHTML('beforeend', cardComponente(e.nombre, e.descripcion, e.imagen, e.precio, cantTemp));
+            document.getElementById(`${e.nombre}-cantidad`).addEventListener('input', () => {
+                document.getElementById(`${e.nombre}-precio`).innerText = `$${e.precio} (Total: $${(e.precio * document.getElementById(`${e.nombre}-cantidad`).value).toFixed(2)})`;
+            });
             document.getElementById(`comprar-${e.nombre}-btn`).addEventListener('click', () => {
                 let cant = document.getElementById(`${e.nombre}-cantidad`).value;
                 agregarAlCarrito(e.nombre, cant);
@@ -20,9 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 cantTemp = localStorage.getItem(e.nombre);
             } else cantTemp = e.cantidad;
             document.getElementById('cadenas-container').insertAdjacentHTML('beforeend', cardComponente(e.nombre, e.descripcion, e.imagen, e.precio, cantTemp));
+            document.getElementById(`${e.nombre}-cantidad`).addEventListener('input', () => {
+                document.getElementById(`${e.nombre}-precio`).innerText = `$${e.precio} (Total: $${(e.precio * document.getElementById(`${e.nombre}-cantidad`).value).toFixed(2)})`;
+            });
             document.getElementById(`comprar-${e.nombre}-btn`).addEventListener('click', () => {
                 let cant = document.getElementById(`${e.nombre}-cantidad`).value;
                 agregarAlCarrito(e.nombre, cant);
+                window.location.reload();
             });
         });
     });

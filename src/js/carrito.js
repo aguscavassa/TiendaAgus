@@ -29,10 +29,15 @@ document.getElementById('actualizar-productos').addEventListener('click', () => 
     document.querySelectorAll('.card').forEach(e => {
         localStorage.setItem(e.firstElementChild.nextElementSibling.innerText, e.lastElementChild.firstElementChild.value);
     });
+    window.location.reload();
 });
 
 document.getElementById('comprar-productos').addEventListener('click', () => {
     alert('Se ha concretado la compra!');
+    const savedTheme = localStorage.getItem('theme');
+    localStorage.clear();
+    localStorage.setItem('theme', savedTheme);
+    window.location.reload();
 });
 
 function loadProductos(e) {
