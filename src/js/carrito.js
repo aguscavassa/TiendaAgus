@@ -2,7 +2,7 @@ import {loader, cardComponenteCarrito} from './main.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     loader();
-    fetch('../json/productos.json').then(res => res.json()).then((data) => {
+    fetch('./src/json/productos.json').then(res => res.json()).then((data) => {
         data.anillos.forEach(e => {
             loadProductos(e);
         });
@@ -11,17 +11,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         if (document.querySelectorAll('.card').length === 0) {
             document.querySelector('.cards-container').insertAdjacentHTML('afterbegin', `
-                    <h2>No hay productos en el carro</h2>
-                    <p>Ingresa a la seccion <b>Productos</b> para agregar productos al carrito.</p>
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <h2>No hay productos en el carro</h2>
+                        <p>Ingresa a la seccion <b>Productos</b> para agregar productos al carrito.</p>
+                    </div>
                 `);
-            document.getElementById('carrito-btn-container').remove();
+            document.querySelector('.carrito-btn-container').remove();
         } else {
             document.querySelector('.main-contents').insertAdjacentHTML('afterbegin', `
                     <h2>Productos en el carrito:</h2>
                 `);
         }
     });
-    
+});
+
+document.getElementById('actualizar-productos').addEventListener('click', () => {
+    document.querySelectorAll('.card').forEach(e => {
+        localStorage.setItem(e.firstElementChild.nextElementSibling.innerText, e.lastElementChild.firstElementChild.value);
+    });
+});
+
+document.getElementById('comprar-productos').addEventListener('click', () => {
+    alert('Se ha concretado la compra!');
 });
 
 function loadProductos(e) {
