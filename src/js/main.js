@@ -77,7 +77,7 @@ export let cardComponenteCarrito = (nombre, descripcion, imagen, precio, cantida
             <img src="${imagen}" alt="${nombre}">
             <h3>${nombre}</h3>
             <p>${descripcion}</p>
-            <p>$${precio} (Total: $${(precio * cantidad).toFixed(2)})</p>
+            <p id="${nombre}-precio">$${precio} (Total: $${(precio * cantidad).toFixed(2)})</p>
             <div class="cantidad-container">
                 <input id="${nombre}-cantidad" type="number" min="1" value="${cantidad}">
                 <button id="${nombre}-eliminar">Eliminar</button>
