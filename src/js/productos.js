@@ -13,8 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById(`${e.nombre}-precio`).innerText = `$${e.precio} (Total: $${(e.precio * document.getElementById(`${e.nombre}-cantidad`).value).toFixed(2)})`;
             });
             document.getElementById(`comprar-${e.nombre}-btn`).addEventListener('click', () => {
-                let cant = document.getElementById(`${e.nombre}-cantidad`).value;
-                agregarAlCarrito(e.nombre, cant);
+                if (sessionStorage.getItem('loggedUser') === null) {
+                    alert('Debe estar logeado o registrado para agregar productos al carrito.');
+                } else {
+                    let cant = document.getElementById(`${e.nombre}-cantidad`).value;
+                    agregarAlCarrito(e.nombre, cant);
+                    window.location.reload();
+                }
             });
         });
         data.cadenas.forEach(e => {
@@ -27,9 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById(`${e.nombre}-precio`).innerText = `$${e.precio} (Total: $${(e.precio * document.getElementById(`${e.nombre}-cantidad`).value).toFixed(2)})`;
             });
             document.getElementById(`comprar-${e.nombre}-btn`).addEventListener('click', () => {
-                let cant = document.getElementById(`${e.nombre}-cantidad`).value;
-                agregarAlCarrito(e.nombre, cant);
-                window.location.reload();
+                if (sessionStorage.getItem('loggedUser') === null) {
+                    alert('Debe estar logeado o registrado para agregar productos al carrito.');
+                } else {
+                    let cant = document.getElementById(`${e.nombre}-cantidad`).value;
+                    agregarAlCarrito(e.nombre, cant);
+                    window.location.reload();
+                }
             });
         });
     });
